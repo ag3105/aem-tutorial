@@ -19,7 +19,7 @@ import javax.annotation.Nonnull;
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class CoronaTrackerModel implements ComponentExporter {
 
-    protected static final String RESOURCE_TYPE = "mysite/components/coronatracker";
+    protected static final String RESOURCE_TYPE = "tutorial/components/coronatracker";
     public String dataJson;
 
     @OSGiService

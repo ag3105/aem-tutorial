@@ -1,0 +1,24 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript">
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script async  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChxoSa2XZNTPZHs1UUuA24vfEAZhm3JRc">
+</script>
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}"/>
+<sly data-sly-call="${clientLib.all @ categories='mysite.coronatracker'}"/>
+Corona Tracker ---->>>
+
+<div data-sly-use.model="com.adobe.aem.tutorial.core.models.coronatracker.CoronaTrackerModel">
+    ${model.country}<br/>
+
+    ${model.dataJson}<br/>
+</div>
+<div class="container">
+    <h2>Search stores</h2>
+    <label for="loadmap">Load map</label>
+    <input id="zipCode" type="text" value=${model.dataJson}>
+    <input type="hidden" id="miles10" name="miles" value="${properties.miles}" />
+    <button class="btn btn-info" id="submitZip" onClick=getLocation() >Submit</button>
+
+    <div id="map-canvas">
+    </div>
+</div>
+
